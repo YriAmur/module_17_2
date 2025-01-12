@@ -6,10 +6,13 @@ import app.models.task as task_model
 
 app = FastAPI()
 
-app.include_router(task.router)
-app.include_router(user.router)
-
 
 @app.get('/')
 async def welcome():
     return {"message": "Welcome to Taskmanager"}
+
+
+app.include_router(task.router)
+app.include_router(user.router)
+
+
